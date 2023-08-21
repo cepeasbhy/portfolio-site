@@ -98,15 +98,19 @@ export default function WeatherApp() {
               </div>
               <div className="weather-data-block">
                 <div className="weather-item">
-                  <div className="temp-data">{searchResult.main.temp_min}</div>
+                  <div className="temp-data">
+                    {searchResult.main.temp_min} °C
+                  </div>
                   <div className="temp-description">Min. Temp</div>
                 </div>
                 <div className="weather-item">
-                  <div className="temp-data">{searchResult.main.temp}</div>
+                  <div className="temp-data">{searchResult.main.temp} °C</div>
                   <div className="temp-description">Avg. Temp</div>
                 </div>
                 <div className="weather-item">
-                  <div className="temp-data">{searchResult.main.temp_max}</div>
+                  <div className="temp-data">
+                    {searchResult.main.temp_max} °C
+                  </div>
                   <div className="temp-description">Max. Temp</div>
                 </div>
               </div>
