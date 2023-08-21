@@ -1,7 +1,7 @@
 "use client";
 
 import "aos/dist/aos.css";
-import "@splidejs/splide/css/skyblue";
+import "./home.css";
 import AOS from "aos";
 
 import { useEffect } from "react";
