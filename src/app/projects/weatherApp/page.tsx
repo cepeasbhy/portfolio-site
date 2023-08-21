@@ -1,3 +1,5 @@
+import WeatherApp from "./weatherApp";
+
 export default function Page() {
-  return <>In Progress</>;
+  return <WeatherApp />;
 }
