@@ -56,6 +56,7 @@ export default function WeatherApp() {
                 type="text"
                 name="query"
                 placeholder="Enter a location..."
+                required
               />
             </div>
             <div className="form-item">
