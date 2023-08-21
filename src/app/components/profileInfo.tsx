@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProfileInfo() {
   return (
     <div id="profile-section">
@@ -13,16 +15,31 @@ export default function ProfileInfo() {
             </div>
             <div id="profile-media">
               <div className="media-item">
-                <img src="/img/soc_med/fb_icon.png" alt="" />
+                <Link
+                  rel="stylesheet"
+                  href="https://www.facebook.com/cepeasbhy"
+                  target="_blank"
+                >
+                  <img src="/img/soc_med/fb_icon.png" alt="" />
+                </Link>
               </div>
               <div className="media-item">
-                <img src="/img/soc_med/linkedin_icon.png" alt="" />
+                <Link
+                  href="https://www.linkedin.com/in/asbhy-cepe/"
+                  target="_blank"
+                >
+                  <img src="/img/soc_med/linkedin_icon.png" alt="" />
+                </Link>
               </div>
               <div className="media-item">
-                <img src="/img/soc_med/github_icon.png" alt="" />
+                <Link href="https://github.com/cepeasbhy" target="_blank">
+                  <img src="/img/soc_med/github_icon.png" alt="" />
+                </Link>
               </div>
               <div className="media-item">
-                <img src="/img/soc_med/email_icon.png" alt="" />
+                <Link href="mailto:asbhycepe01@gmail.com">
+                  <img src="/img/soc_med/email_icon.png" alt="" />
+                </Link>
               </div>
             </div>
           </div>
