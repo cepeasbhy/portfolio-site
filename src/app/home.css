@@ -74,7 +74,8 @@ main {
 }
 
 #techstack-section,
-#cert-section {
+#cert-section,
+#projects-section {
   margin-top: 40px;
 }
 
@@ -94,7 +95,7 @@ main {
   color: #ffff;
 }
 
-.section-content {
+#techstack-section > .section-wrapper > .section-content {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -127,7 +128,62 @@ main {
   text-align: center;
 }
 
-@media only screen and (max-width: 760px) {
+.card {
+  background-color: #303233;
+  width: 250px;
+  margin-right: 20px;
+  border: 1px solid #279eff;
+  margin-top: 20px;
+}
+
+.card-img {
+  overflow: hidden;
+}
+
+#todo-app,
+#weather-app {
+  height: 200px;
+  background-size: cover;
+  transition: all 0.5s;
+}
+
+#weather-app {
+  background-image: url("/img/projects/weather_app.png");
+}
+
+#todo-app {
+  background-image: url("/img/projects/todo_app.png");
+}
+
+#todo-app:hover,
+#weather-app:hover {
+  transform: scale(1.5);
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  text-align: justify;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+#projects-section > .section-wrapper > .section-content {
+  display: flex;
+}
+
+.live-link {
+  text-align: end;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
   #profile-image > img {
     width: 250px;
     height: 250px;
@@ -211,6 +267,54 @@ main {
 
   .cert-item {
     padding: 10px;
+  }
+
+  .cert-img > img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cert-description {
+    color: #ffff;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  #projects-section > .section-wrapper > .section-content {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #profile-section {
+    margin-bottom: 40px;
+  }
+  #profile-image > img {
+    width: 200px;
+    height: 200px;
+  }
+
+  #profile-content {
+    margin-top: 20px;
+    height: max-content;
+  }
+
+  #profile-description {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #profile-title {
+    font-size: 40px;
+  }
+
+  #profile-subtitle {
+    font-size: 20px;
+  }
+
+  .media-item > a > img {
+    height: 40px;
+    width: 40px;
   }
 
   .cert-img > img {

@@ -9,6 +9,7 @@ import ProfileInfo from "./components/profileInfo";
 import AboutMe from "./components/abotmeInfo";
 import TechStackInfo from "./components/techStackInfo";
 import CertificatesInfo from "./components/certificateInfo";
+import ProjectsInfo from "./components/projectInfo";
 
 export default function Home() {
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Home() {
       <AboutMe />
       <TechStackInfo />
       <CertificatesInfo />
+      <ProjectsInfo />
     </main>
   );
 }
