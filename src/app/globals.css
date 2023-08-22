@@ -86,14 +86,8 @@ button:hover {
   cursor: pointer;
 }
 
-.task-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #303233;
-  border-radius: 10px;
-  margin-top: 10px;
+sup {
+  font-size: 14px;
 }
 
 .spinner-container {
