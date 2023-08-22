@@ -5,7 +5,7 @@ export default function CertificatesInfo() {
         <div className="section-title">
           <p>Certifications</p>
         </div>
-        <div className="cert-content" data-aos="fade-up">
+        <div className="cert-content" data-aos="zoom-in">
           <div className="cert-item">
             <div className="cert-img">
               <img src="/img/certs/CCNAITN.png" alt="" />
