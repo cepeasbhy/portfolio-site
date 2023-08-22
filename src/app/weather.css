@@ -1,67 +1,16 @@
-#container {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-h1,
-.subtitle {
-  color: #ffff;
-}
-
 .subtitle {
   font-size: 13px;
   text-align: center;
-}
-
-.form-group {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.form-item {
-  padding: 10px;
-}
-
-#main-app {
-  margin-top: 10px;
-}
-
-button,
-input {
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-}
-
-input {
-  outline: none;
-  border: 1px solid #279eff;
-}
-
-button {
-  background-color: #279eff;
-  color: #ffff;
-  font-weight: bold;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 .display-conditions {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffff;
 }
 
 .weather-data-block {
   display: flex;
-  color: #ffff;
   align-items: center;
   justify-content: center;
 }
@@ -97,37 +46,5 @@ button:hover {
 }
 
 .display-msg {
-  color: #ffff;
   text-align: center;
-}
-
-.spinner-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.spinner {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-}
-.spinner {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: spinner 1.2s linear infinite;
-}
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

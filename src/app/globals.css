@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #ffff;
 }
 
 body {
@@ -30,7 +31,6 @@ body {
 }
 
 .description-404 {
-  color: #ffff;
   text-align: center;
 }
 
@@ -40,4 +40,89 @@ body {
 
 .msg-subtitle {
   font-size: 15px;
+}
+
+#container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-item {
+  padding: 10px;
+}
+
+#main-app {
+  margin-top: 10px;
+}
+
+button,
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+input {
+  outline: none;
+  border: 1px solid #279eff;
+  color: #000;
+}
+
+button {
+  background-color: #279eff;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #303233;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.spinner {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: spinner 1.2s linear infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
