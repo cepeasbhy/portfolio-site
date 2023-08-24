@@ -21,7 +21,7 @@ export default function TodoApp() {
     <div id="container">
       <div className="app-wrapper">
         <div className="app-title">
-          <h2>TODO APP</h2>
+          <h3>YOUR TASKS FOR THE DAY</h3>
         </div>
         <div className="main-app">
           <form onSubmit={handleSubmit}>
@@ -47,7 +47,9 @@ export default function TodoApp() {
               <div className="task-item" key={index}>
                 <div className="description">{item}</div>
                 <div className="action">
-                  <button onClick={() => deleteTask(index)}>DELETE</button>
+                  <button onClick={() => deleteTask(index)}>
+                    <img src="/img/trash_icon.png"></img>
+                  </button>
                 </div>
               </div>
             ))}

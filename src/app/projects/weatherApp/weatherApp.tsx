@@ -1,6 +1,6 @@
 "use client";
 
-import "@/app/weather.css";
+import "../weatherApp/weather.css";
 import { WeatherData } from "@/models/weatherModel";
 import { FormEvent, useState } from "react";
 

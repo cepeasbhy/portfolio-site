@@ -1,4 +1,4 @@
-import "@/app/todo.css";
+import "../todoApp/todo.css";
 import { Metadata } from "next";
 import TodoApp from "./todoApp";
 

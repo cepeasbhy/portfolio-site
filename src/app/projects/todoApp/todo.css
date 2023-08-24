@@ -1,0 +1,76 @@
+body {
+  background-color: #ffff;
+}
+
+.app-title > h3 {
+  color: #793fdf;
+  text-align: center;
+}
+
+.task-stats {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #793fdf;
+}
+
+.task-stats > p {
+  color: #793fdf;
+}
+
+.task-item {
+  display: flex;
+  background-color: #d0bfef;
+  border: 1px solid #793fdf;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-shadow: 2px 1px #793fdf;
+}
+
+input {
+  border: 1px solid #793fdf;
+}
+
+.form-item > button {
+  background-color: #793fdf;
+  padding: 5px;
+}
+
+button {
+  background-color: #0000;
+  padding: 0;
+}
+
+button > img {
+  width: 20px;
+  height: 20px;
+  transition: all ease-in 0.2s;
+}
+
+button > img:hover {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 760px) {
+  .app-wrapper {
+    width: 300px;
+    padding: 15px;
+  }
+
+  .form-group {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .form-item {
+    padding: 0;
+    padding-bottom: 10px;
+  }
+
+  button,
+  input {
+    width: 100%;
+  }
+}
