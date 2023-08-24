@@ -78,7 +78,7 @@ export default function WeatherApp() {
           )}
           {searchResult?.cod === 200 && (
             <>
-              <div className="weather-data-block">
+              <div className="weather-data-block" id="weather-condition">
                 <div className="weather-item">
                   <img
                     src={
