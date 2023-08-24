@@ -56,6 +56,14 @@ export default function TechStackInfo() {
           </div>
           <div className="tech-item" data-aos="zoom-in">
             <div className="tech-icon">
+              <img src="/img/tech_icons/nextjs_icon.png" alt="" />
+            </div>
+            <div className="tech-description">
+              <p>NEXTJS FRAMEWORK</p>
+            </div>
+          </div>
+          <div className="tech-item" data-aos="zoom-in">
+            <div className="tech-icon">
               <img src="/img/tech_icons/laravel_icon.png" alt="" />
             </div>
             <div className="tech-description">

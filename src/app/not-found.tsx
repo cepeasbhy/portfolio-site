@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+};
+
 export default function Custom404() {
   return (
     <div id="main-404">
@@ -12,6 +18,9 @@ export default function Custom404() {
             removed from this site
           </p>
         </div>
+        <a href="/" id="link-back-home">
+          GO BACK HOME
+        </a>
       </div>
     </div>
   );

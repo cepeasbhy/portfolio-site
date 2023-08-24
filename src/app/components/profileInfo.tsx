@@ -32,11 +32,6 @@ export default function ProfileInfo() {
                 </Link>
               </div>
               <div className="media-item">
-                <Link href="https://github.com/cepeasbhy" target="_blank">
-                  <img src="/img/soc_med/github_icon.png" alt="" />
-                </Link>
-              </div>
-              <div className="media-item">
                 <Link href="mailto:asbhycepe01@gmail.com">
                   <img src="/img/soc_med/email_icon.png" alt="" />
                 </Link>

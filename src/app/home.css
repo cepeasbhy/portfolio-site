@@ -213,13 +213,13 @@ main {
   }
 
   #profile-media {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .media-item > a > img {
     height: 40px;
     width: 40px;
-    margin-right: 0;
+    margin: 0;
   }
 
   .section-title {

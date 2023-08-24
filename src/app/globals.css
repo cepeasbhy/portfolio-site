@@ -112,6 +112,21 @@ sup {
   border-color: #fff transparent #fff transparent;
   animation: spinner 1.2s linear infinite;
 }
+
+#link-back-home {
+  padding: 5px;
+  border: 1px solid #279eff;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #279eff;
+}
+
+#link-back-home:hover {
+  color: #ffff;
+  background-color: #279eff;
+}
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);

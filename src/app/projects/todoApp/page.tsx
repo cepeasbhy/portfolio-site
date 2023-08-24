@@ -1,7 +1,12 @@
 "use client";
 
 import "@/app/todo.css";
+import { Metadata } from "next";
 import { FormEvent, useState } from "react";
+
+export const metadata: Metadata = {
+  title: "TODO APP",
+};
 
 export default function Page() {
   const [taskList, setTaskList] = useState<string[]>([]);
