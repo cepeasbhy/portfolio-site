@@ -14,8 +14,8 @@ export default function Custom404() {
         <div className="description-404">
           <p className="msg-title">PAGE NOT FOUND</p>
           <p className="msg-subtitle">
-            The page that your are trying access cannot be found or has been
-            removed from this site
+            The page that your are trying access cannot be found, has been
+            removed from this site or simply does not exist
           </p>
         </div>
         <a href="/" id="link-back-home">
