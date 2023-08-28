@@ -1,7 +1,6 @@
 "use client";
 
 import { use, useState } from "react";
-import { isConstructorDeclaration } from "typescript";
 
 export default function TicTacToe() {
   const [playerTurn, setPlayerTurn] = useState<number>(1);
@@ -10,11 +9,7 @@ export default function TicTacToe() {
   const [player2Score, setPlayer2Score] = useState<number>(0);
 
   function handlePlaceTurn(blockID: string) {
-    if (
-      playerTurn != 10 &&
-      document.getElementById(blockID)!.innerHTML == "" &&
-      !isGameEnd
-    ) {
+    if (document.getElementById(blockID)!.innerHTML == "" && !isGameEnd) {
       if (playerTurn % 2 != 0) {
         document.getElementById(blockID)!.innerHTML = "〇";
       } else {
@@ -22,6 +17,7 @@ export default function TicTacToe() {
       }
       setPlayerTurn(playerTurn + 1);
       checkGameConditions();
+      console.log(playerTurn + " " + isGameEnd);
     }
   }
 
@@ -153,47 +149,47 @@ export default function TicTacToe() {
         <div
           className="block"
           id="b1"
-          onClick={() => !isGameEnd && handlePlaceTurn("b1")}
+          onClick={() => handlePlaceTurn("b1")}
         ></div>
         <div
           className="block"
           id="b2"
-          onClick={() => !isGameEnd && handlePlaceTurn("b2")}
+          onClick={() => handlePlaceTurn("b2")}
         ></div>
         <div
           className="block"
           id="b3"
-          onClick={() => !isGameEnd && handlePlaceTurn("b3")}
+          onClick={() => handlePlaceTurn("b3")}
         ></div>
         <div
           className="block"
           id="b4"
-          onClick={() => !isGameEnd && handlePlaceTurn("b4")}
+          onClick={() => handlePlaceTurn("b4")}
         ></div>
         <div
           className="block"
           id="b5"
-          onClick={() => !isGameEnd && handlePlaceTurn("b5")}
+          onClick={() => handlePlaceTurn("b5")}
         ></div>
         <div
           className="block"
           id="b6"
-          onClick={() => !isGameEnd && handlePlaceTurn("b6")}
+          onClick={() => handlePlaceTurn("b6")}
         ></div>
         <div
           className="block"
           id="b7"
-          onClick={() => !isGameEnd && handlePlaceTurn("b7")}
+          onClick={() => handlePlaceTurn("b7")}
         ></div>
         <div
           className="block"
           id="b8"
-          onClick={() => !isGameEnd && handlePlaceTurn("b8")}
+          onClick={() => handlePlaceTurn("b8")}
         ></div>
         <div
           className="block"
           id="b9"
-          onClick={() => !isGameEnd && handlePlaceTurn("b9")}
+          onClick={() => handlePlaceTurn("b9")}
         ></div>
       </div>
       <div id="btn-container">
