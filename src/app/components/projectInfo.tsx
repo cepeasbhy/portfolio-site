@@ -41,6 +41,23 @@ export default function ProjectsInfo() {
               </div>
             </div>
           </div>
+          <div className="card" data-aos="flip-left">
+            <div className="card-img">
+              <div id="tic-tac"></div>
+            </div>
+            <div className="card-content">
+              <div className="card-title">TIC TAC TOE</div>
+              <div className="card-description">
+                <p>
+                  A web based application of TIC TAC TOE game complete with
+                  score tracking.
+                </p>
+              </div>
+              <div className="live-link">
+                <a href="/projects/ticTacToe">Live Demo</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

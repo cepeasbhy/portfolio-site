@@ -143,7 +143,8 @@ main {
 }
 
 #todo-app,
-#weather-app {
+#weather-app,
+#tic-tac {
   height: 200px;
   background-size: cover;
   transition: all 0.5s;
@@ -157,8 +158,13 @@ main {
   background-image: url("/img/projects/todo_app.png");
 }
 
+#tic-tac {
+  background-image: url("/img/projects/tic_tac_toe.png");
+}
+
 #todo-app:hover,
-#weather-app:hover {
+#weather-app:hover,
+#tic-tac:hover {
   transform: scale(1.5);
 }
 
