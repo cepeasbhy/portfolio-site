@@ -11,12 +11,13 @@ export default function ProjectsInfo() {
               <div id="weather-app"></div>
             </div>
             <div className="card-content">
-              <div className="card-title">WEATHER APP</div>
+              <div className="card-title">SKYMASTER</div>
               <div className="card-description">
                 <p>
-                  A simple web-based application that provide users with weather
-                  data and includes search functionality of locations. It is
-                  powered through OpenWeather API for providing weather data.
+                  A web-based application that allows users to search locations
+                  and provide them with the current weather and a 5 day
+                  forecast. It is powered through OpenWeather API in providing
+                  weather data
                 </p>
               </div>
               <div className="live-link">

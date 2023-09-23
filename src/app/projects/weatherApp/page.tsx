@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import WeatherApp from "./weatherApp";
 
 export const metadata: Metadata = {
-  title: "WEATHER APP",
+  title: "SKYMASTER",
 };
 
 export default function Page() {
