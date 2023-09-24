@@ -1,11 +1,12 @@
 "use client";
 
 import Spinner from "@/app/components/spinner";
-import { market } from "@/models/crypto";
+import { crypto, market } from "@/models/crypto";
 import { useEffect, useState } from "react";
 
 export default function CyptoApp() {
   const [marketData, setMarketData] = useState<market | null>(null);
+  const [cryptoList, setCryptoList] = useState<crypto[] | null>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -16,11 +17,16 @@ export default function CyptoApp() {
     try {
       setIsLoading(true);
       setMarketData(null);
+      setCryptoList(null);
 
-      const response = await fetch("/api/crypto/marketGlobal");
-      const result: market = await response.json();
+      const responseMarket = await fetch("/api/crypto/marketGlobal");
+      const responseCryptoList = await fetch("/api/crypto/list");
 
-      setMarketData(result);
+      const resultMarket: market = await responseMarket.json();
+      const resultCryptoList: crypto[] = await responseCryptoList.json();
+
+      setMarketData(resultMarket);
+      setCryptoList(resultCryptoList);
     } catch (err) {
       console.log(err);
     } finally {
@@ -59,6 +65,53 @@ export default function CyptoApp() {
                 <p className="item-data">{marketData.data.markets}</p>
                 <p className="item-label">Exchanges</p>
               </div>
+            </div>
+          </>
+        )}
+      </section>
+      <section id="crypto-list">
+        {cryptoList && marketData && (
+          <>
+            <div className="section-title">
+              <h3>Top 100 Cryptocurrencies Ranked by Market Cap</h3>
+            </div>
+            <div className="section-content">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Coin</th>
+                    <th>Price</th>
+                    <th>24h Volume </th>
+                    <th>Market Cap</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cryptoList.map((data, index) => (
+                    <tr key={index}>
+                      <td>{data.market_cap_rank}</td>
+                      <td>
+                        <div className="crypto-identity">
+                          <div className="idenity-item">
+                            <img
+                              className="crypto-img"
+                              src={data.image}
+                              alt=""
+                            />
+                          </div>
+                          <div className="identity-item">{data.name}</div>
+                          <div className="identity-item">
+                            {data.symbol.toUpperCase()}
+                          </div>
+                        </div>
+                      </td>
+                      <td>₱ {data.current_price.toLocaleString()}</td>
+                      <td>₱ {data.total_volume.toLocaleString()}</td>
+                      <td>₱ {data.market_cap.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </>
         )}
