@@ -15,7 +15,7 @@ a {
 #main-content,
 .header-wrapper {
   margin: auto;
-  width: 90%;
+  width: 95%;
 }
 
 .header-wrapper {
@@ -42,11 +42,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.header-item:nth-child(1) {
-  border-right: 2px solid #f4641d;
-  width: 30%;
-}
-
 .header-item:nth-child(2) {
   display: flex;
   gap: 10px;
@@ -61,13 +56,19 @@ a:hover {
   text-decoration: underline;
 }
 
+#search {
+  display: none;
+}
+
 input {
   background-color: #d7d2d2;
+  width: 100%;
   border: none;
 }
 
 .form-item {
   display: flex;
+  padding: 0;
   gap: 10px;
 }
 
@@ -91,8 +92,7 @@ section {
 
 #market-summary > .section-content {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  gap: 20px;
 }
 
 .summary-item {
@@ -105,6 +105,12 @@ section {
   padding: 10px;
   width: 250px;
   box-shadow: 3px 3px 5.5px 3.5px #c0b9b9;
+  flex-grow: 1;
+}
+
+.summary-group {
+  display: flex;
+  gap: 20px;
 }
 
 .item-data {
@@ -132,6 +138,12 @@ th {
   text-align: left;
 }
 
+thead {
+  position: sticky;
+  top: 0;
+  background-color: #ffff;
+}
+
 td {
   padding: 10px;
   border-bottom: 1px solid #b3b3b3;
@@ -152,12 +164,67 @@ tbody > tr:hover {
   gap: 10px;
 }
 
-.identity-item:nth-child(3) {
+.symbol {
+  color: #8a8585;
   font-size: 10px;
 }
 
-th {
-  position: sticky;
-  top: 0;
-  background-color: #ffff;
+@media only screen and (max-width: 1150px) {
+  #market-summary > .section-content {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 865px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  td:not(:nth-child(2)) {
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .summary-group:nth-child(1) {
+    flex-direction: column;
+  }
+
+  td,
+  th {
+    font-size: 15px;
+  }
+
+  .sticky-col {
+    position: sticky;
+    background-color: #ffff;
+  }
+
+  .first-col {
+    left: 0;
+  }
+
+  .second-col {
+    left: 45px;
+  }
+
+  .summary-item {
+    width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .header-item:nth-child(2) {
+    display: none;
+  }
+
+  #search {
+    display: block;
+  }
 }

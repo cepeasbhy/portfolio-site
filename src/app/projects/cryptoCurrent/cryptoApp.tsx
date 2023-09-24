@@ -35,6 +35,14 @@ export default function CyptoApp() {
   }
   return (
     <>
+      <section id="search">
+        <form action="">
+          <div className="form-item">
+            <input type="text" />
+            <button>SEARCH</button>
+          </div>
+        </form>
+      </section>
       <section id="market-summary">
         {isLoading && <Spinner />}
         {marketData && (
@@ -43,32 +51,37 @@ export default function CyptoApp() {
               <h3>Cryptocurrency Market Summary</h3>
             </div>
             <div className="section-content">
-              <div className="summary-item">
-                <p className="item-data">
-                  ₱ {marketData.data.total_market_cap.php.toLocaleString()}
-                </p>
-                <p className="item-label">Market Capitalization</p>
+              <div className="summary-group">
+                <div className="summary-item">
+                  <p className="item-data">
+                    ₱ {marketData.data.total_market_cap.php.toLocaleString()}
+                  </p>
+                  <p className="item-label">Market Capitalization</p>
+                </div>
+                <div className="summary-item">
+                  <p className="item-data">
+                    ₱ {marketData.data.total_volume.php.toLocaleString()}
+                  </p>
+                  <p className="item-label">24h Trading Volume</p>
+                </div>
               </div>
-              <div className="summary-item">
-                <p className="item-data">
-                  ₱ {marketData.data.total_volume.php.toLocaleString()}
-                </p>
-                <p className="item-label">24h Trading Volume</p>
-              </div>
-              <div className="summary-item">
-                <p className="item-data">
-                  {marketData.data.active_cryptocurrencies.toLocaleString()}
-                </p>
-                <p className="item-label">Total Active Coins</p>
-              </div>
-              <div className="summary-item">
-                <p className="item-data">{marketData.data.markets}</p>
-                <p className="item-label">Exchanges</p>
+              <div className="summary-group">
+                <div className="summary-item">
+                  <p className="item-data">
+                    {marketData.data.active_cryptocurrencies.toLocaleString()}
+                  </p>
+                  <p className="item-label">Total Active Coins</p>
+                </div>
+                <div className="summary-item">
+                  <p className="item-data">{marketData.data.markets}</p>
+                  <p className="item-label">Exchanges</p>
+                </div>
               </div>
             </div>
           </>
         )}
       </section>
+
       <section id="crypto-list">
         {cryptoList && marketData && (
           <>
@@ -79,8 +92,8 @@ export default function CyptoApp() {
               <table>
                 <thead>
                   <tr>
-                    <th>#</th>
-                    <th>Coin</th>
+                    <th className="sticky-col first-col">#</th>
+                    <th className="sticky-col second-col">Coin</th>
                     <th>Price</th>
                     <th>24h Volume </th>
                     <th>Market Cap</th>
@@ -89,8 +102,10 @@ export default function CyptoApp() {
                 <tbody>
                   {cryptoList.map((data, index) => (
                     <tr key={index}>
-                      <td>{data.market_cap_rank}</td>
-                      <td>
+                      <td className="sticky-col first-col">
+                        {data.market_cap_rank}
+                      </td>
+                      <td className="sticky-col second-col">
                         <div className="crypto-identity">
                           <div className="idenity-item">
                             <img
@@ -99,9 +114,11 @@ export default function CyptoApp() {
                               alt=""
                             />
                           </div>
-                          <div className="identity-item">{data.name}</div>
                           <div className="identity-item">
-                            {data.symbol.toUpperCase()}
+                            {data.name} <br />
+                            <span className="symbol">
+                              {data.symbol.toUpperCase()}
+                            </span>
                           </div>
                         </div>
                       </td>
