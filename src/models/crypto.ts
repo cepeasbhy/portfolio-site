@@ -8,6 +8,7 @@ export interface market {
     total_volume: {
       php: number;
     };
+    updated_at: number;
   };
 }
 

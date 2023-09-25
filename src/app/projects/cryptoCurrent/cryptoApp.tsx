@@ -1,5 +1,6 @@
 "use client";
 
+import DisplayTime from "@/app/components/displayTime";
 import Spinner from "@/app/components/spinner";
 import { crypto, market } from "@/models/crypto";
 import { useEffect, useState } from "react";
@@ -34,6 +35,7 @@ export default function CyptoApp() {
       setIsLoading(false);
     }
   }
+
   return (
     <>
       <section id="search">
@@ -50,6 +52,10 @@ export default function CyptoApp() {
           <>
             <div className="section-title">
               <h3>Cryptocurrency Market Summary</h3>
+              <p className="display-time">
+                Updated as of{" "}
+                <DisplayTime epochTime={marketData.data.updated_at} />
+              </p>
             </div>
             <div className="section-content">
               <div className="summary-group">
