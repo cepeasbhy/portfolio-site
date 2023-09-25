@@ -25,7 +25,6 @@ export default function CyptoApp() {
 
       const resultMarket: market = await responseMarket.json();
       const resultCryptoList: crypto[] = await responseCryptoList.json();
-      console.table(resultMarket);
 
       setMarketData(resultMarket);
       setCryptoList(resultCryptoList);
