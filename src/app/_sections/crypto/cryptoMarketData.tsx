@@ -1,4 +1,4 @@
-import DisplayTime from "@/app/components/displayTime";
+import DisplayTime from "@/app/_components/displayTime";
 import { market } from "@/models/crypto";
 
 interface Props {

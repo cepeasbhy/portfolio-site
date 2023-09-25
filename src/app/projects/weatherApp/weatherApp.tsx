@@ -1,10 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import "./weather.css";
-import { WeatherData } from "@/models/weatherModel";
-import ForecastItem from "@/app/components/forecastItem";
-import Spinner from "@/app/components/spinner";
+import { WeatherData } from "../../../models/weatherModel";
+import ForecastItem from "../../_components/forecastItem";
+import Spinner from "../../_components/spinner";
 
 export default function App() {
   const [forecastData, setForecastData] = useState<WeatherData[]>([]);

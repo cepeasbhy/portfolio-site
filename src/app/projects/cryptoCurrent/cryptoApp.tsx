@@ -1,10 +1,10 @@
 "use client";
 
-import Spinner from "@/app/components/spinner";
+import Spinner from "@/app/_components/spinner";
 import { crypto, market } from "@/models/crypto";
 import { useEffect, useState } from "react";
-import CryptoTable from "./cryptoTable";
-import CryptoMarketData from "./cryptoMarketData";
+import CryptoTable from "@/app/_sections/crypto/cryptoTable";
+import CryptoMarketData from "@/app/_sections/crypto/cryptoMarketData";
 
 export default function CyptoApp() {
   const [marketData, setMarketData] = useState<market | null>(null);

@@ -1,15 +1,15 @@
 "use client";
 
 import "aos/dist/aos.css";
-import "./home.css";
+import "./_styles/home.css";
 import AOS from "aos";
 
 import { useEffect } from "react";
-import ProfileInfo from "./components/profileInfo";
-import AboutMe from "./components/abotmeInfo";
-import TechStackInfo from "./components/techStackInfo";
-import CertificatesInfo from "./components/certificateInfo";
-import ProjectsInfo from "./components/projectInfo";
+import ProfileInfo from "./_sections/profileInfo";
+import AboutMe from "./_sections/abotmeInfo";
+import TechStackInfo from "./_sections/techStackInfo";
+import CertificatesInfo from "./_sections/certificateInfo";
+import ProjectsInfo from "./_sections/projectInfo";
 
 export default function Home() {
   useEffect(() => {

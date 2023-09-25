@@ -3,6 +3,7 @@ body {
 }
 
 header {
+  display: block;
   padding: 10px;
   border-bottom: 2px solid #ff5400;
   margin-bottom: 20px;

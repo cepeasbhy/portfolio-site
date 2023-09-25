@@ -1,5 +1,5 @@
 import TicTacToe from "./gameApp";
-import "./game.css";
+import "@/app/_styles/game.css";
 
 export default function Page() {
   return (

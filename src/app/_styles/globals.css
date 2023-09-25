@@ -10,6 +10,10 @@ body {
   background-color: #272829;
 }
 
+header {
+  display: none;
+}
+
 #main-404 {
   height: 100vh;
   display: flex;
