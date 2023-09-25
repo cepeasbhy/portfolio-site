@@ -1,14 +1,16 @@
 "use client";
 
-import DisplayTime from "@/app/components/displayTime";
 import Spinner from "@/app/components/spinner";
 import { crypto, market } from "@/models/crypto";
 import { useEffect, useState } from "react";
+import CryptoTable from "./cryptoTable";
+import CryptoMarketData from "./cryptoMarketData";
 
 export default function CyptoApp() {
   const [marketData, setMarketData] = useState<market | null>(null);
   const [cryptoList, setCryptoList] = useState<crypto[] | null>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     getMarketData();
@@ -18,18 +20,23 @@ export default function CyptoApp() {
     try {
       setIsLoading(true);
       setMarketData(null);
-      setCryptoList(null);
+      setCryptoList([]);
+      setIsError(false);
 
       const responseMarket = await fetch("/api/crypto/marketGlobal");
       const responseCryptoList = await fetch("/api/crypto/list");
 
-      const resultMarket: market = await responseMarket.json();
-      const resultCryptoList: crypto[] = await responseCryptoList.json();
+      if (responseMarket.ok && responseCryptoList.ok) {
+        const resultMarket: market = await responseMarket.json();
+        const resultCryptoList: crypto[] = await responseCryptoList.json();
 
-      setMarketData(resultMarket);
-      setCryptoList(resultCryptoList);
+        setMarketData(resultMarket);
+        setCryptoList(resultCryptoList);
+      } else {
+        setIsError(true);
+      }
     } catch (err) {
-      console.log(err);
+      setIsError(true);
     } finally {
       setIsLoading(false);
     }
@@ -45,97 +52,27 @@ export default function CyptoApp() {
           </div>
         </form>
       </section>
+      {isLoading && <Spinner />}
+      {isError && <h1>Something went wrong</h1>}
       <section id="market-summary">
-        {isLoading && <Spinner />}
-        {marketData && (
+        {marketData && !isError && (
           <>
-            <div className="section-title">
-              <h3>Cryptocurrency Market Summary</h3>
-              <p className="display-time">
-                Updated as of{" "}
-                <DisplayTime epochTime={marketData.data.updated_at} />
-              </p>
-            </div>
-            <div className="section-content">
-              <div className="summary-group">
-                <div className="summary-item">
-                  <p className="item-data">
-                    ₱ {marketData.data.total_market_cap.php.toLocaleString()}
-                  </p>
-                  <p className="item-label">Market Capitalization</p>
-                </div>
-                <div className="summary-item">
-                  <p className="item-data">
-                    ₱ {marketData.data.total_volume.php.toLocaleString()}
-                  </p>
-                  <p className="item-label">24h Trading Volume</p>
-                </div>
-              </div>
-              <div className="summary-group">
-                <div className="summary-item">
-                  <p className="item-data">
-                    {marketData.data.active_cryptocurrencies.toLocaleString()}
-                  </p>
-                  <p className="item-label">Total Active Coins</p>
-                </div>
-                <div className="summary-item">
-                  <p className="item-data">{marketData.data.markets}</p>
-                  <p className="item-label">Exchanges</p>
-                </div>
-              </div>
-            </div>
+            <CryptoMarketData marketData={marketData} />
           </>
         )}
       </section>
 
       <section id="crypto-list">
-        {cryptoList && marketData && (
+        {cryptoList && marketData && !isError && (
           <>
-            <div className="section-title">
-              <h3>Top 100 Cryptocurrencies Ranked by Market Cap</h3>
-            </div>
-            <div className="section-content">
-              <table>
-                <thead>
-                  <tr>
-                    <th className="sticky-col first-col">#</th>
-                    <th className="sticky-col second-col">Coin</th>
-                    <th>Price</th>
-                    <th>24h Volume </th>
-                    <th>Market Cap</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cryptoList.map((data, index) => (
-                    <tr key={index}>
-                      <td className="sticky-col first-col">
-                        {data.market_cap_rank}
-                      </td>
-                      <td className="sticky-col second-col">
-                        <div className="crypto-identity">
-                          <div className="idenity-item">
-                            <img
-                              className="crypto-img"
-                              src={data.image}
-                              alt=""
-                            />
-                          </div>
-                          <div className="identity-item">
-                            {data.name} <br />
-                            <span className="symbol">
-                              {data.symbol.toUpperCase()}
-                            </span>
-                          </div>
-                        </div>
-                      </td>
-                      <td>₱ {data.current_price.toLocaleString()}</td>
-                      <td>₱ {data.total_volume.toLocaleString()}</td>
-                      <td>₱ {data.market_cap.toLocaleString()}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            {Array.isArray(cryptoList) ? (
+              <CryptoTable cryptoList={cryptoList} />
+            ) : (
+              <h5>
+                Rate limit has already been exceeded. Please try again for a few
+                minutes
+              </h5>
+            )}
           </>
         )}
       </section>
