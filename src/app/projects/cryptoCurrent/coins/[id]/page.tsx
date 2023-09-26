@@ -6,11 +6,16 @@ interface Props {
 
 export const revalidate = 0;
 
-export default async function Page({ params: { id } }: Props) {
+async function getData(id: string) {
   const response = await fetch(
-    `http://localhost:3000/api/crypto/coin?id=${id}`
+    `${process.env.APP_URL}/api/crypto/coin?id=${id}`
   );
   const coinData: coin = await response.json();
+  return coinData;
+}
+
+export default async function Page({ params: { id } }: Props) {
+  const coinData = await getData(id);
 
   return (
     <>
