@@ -1,4 +1,5 @@
 import { crypto } from "@/models/crypto";
+import Link from "next/link";
 
 interface Props {
   cryptoList: crypto[];
@@ -26,12 +27,15 @@ export default function CryptoTable({ cryptoList }: Props) {
               <tr key={index}>
                 <td className="sticky-col first-col">{data.market_cap_rank}</td>
                 <td className="sticky-col second-col">
-                  <div className="crypto-identity">
+                  <div className="crypto-identity d-flex">
                     <div className="idenity-item">
                       <img className="crypto-img" src={data.image} alt="" />
                     </div>
                     <div className="identity-item">
-                      {data.name} <br />
+                      <Link href={"cryptoCurrent/coins/" + data.id}>
+                        {data.name}
+                      </Link>{" "}
+                      <br />
                       <span className="symbol">
                         {data.symbol.toUpperCase()}
                       </span>

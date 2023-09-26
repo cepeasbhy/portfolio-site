@@ -14,11 +14,12 @@ header {
   display: none;
 }
 
+.d-flex {
+  display: flex;
+}
+
 #main-404 {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .image-content-404 > img {
@@ -26,11 +27,19 @@ header {
   width: auto;
 }
 
-#main-404 > .content-wrapper {
+#main-404,
+#container,
+#main-404 > .content-wrapper,
+.wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#container,
+#main-404 > .content-wrapper,
+.wrapper {
+  flex-direction: column;
 }
 
 .description-404 {
@@ -47,10 +56,6 @@ header {
 
 #container {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .form-group {
@@ -92,13 +97,6 @@ button:hover {
 
 sup {
   font-size: 14px;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .spinner {

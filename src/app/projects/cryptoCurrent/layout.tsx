@@ -1,4 +1,5 @@
 import Header from "@/app/_components/cryptocurrent/header";
+import SearchBar from "@/app/_components/cryptocurrent/searchBar";
 import "@/app/_styles/crypto.css";
 
 export default function CryptoLayout({
@@ -9,7 +10,12 @@ export default function CryptoLayout({
   return (
     <>
       <Header />
-      <div id="main-content">{children}</div>
+      <div id="main-content">
+        <section id="search">
+          <SearchBar />
+        </section>
+        {children}
+      </div>
     </>
   );
 }

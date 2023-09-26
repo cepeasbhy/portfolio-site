@@ -1,12 +1,17 @@
 "use client";
 
+import Link from "next/link";
+import SearchBar from "./searchBar";
+
 export default function Header() {
   return (
     <header>
-      <div className="header-wrapper">
+      <div className="header-wrapper d-flex">
         <div className="header-item">
           <div className="header-title">
-            <h2>CRYPTOCURRENT </h2>
+            <Link href={"/projects/cryptoCurrent"}>
+              <h2>CRYPTOCURRENT </h2>
+            </Link>
           </div>
           <div className="header-subtitle">
             <p>
@@ -18,12 +23,7 @@ export default function Header() {
           </div>
         </div>
         <div className="header-item">
-          <form action="">
-            <div className="form-item">
-              <input type="text" />
-              <button>SEARCH</button>
-            </div>
-          </form>
+          <SearchBar />
         </div>
       </div>
     </header>

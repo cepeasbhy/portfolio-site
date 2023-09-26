@@ -22,3 +22,29 @@ export interface crypto {
   total_volume: number;
   image: string;
 }
+
+export interface coin {
+  id: string;
+  market_cap_rank: number;
+  symbol: string;
+  name: string;
+  description: { en: string };
+  image: { large: string };
+  watchlist_portfolio_users: number;
+  market_data: {
+    current_price: { php: number };
+    market_cap: { php: number };
+    fully_diluted_valuation: { php: number };
+    total_volume: { php: number };
+    high_24h: { php: number };
+    low_24h: { php: number };
+    ath: { php: number };
+    atl: { php: number };
+    total_supply: number;
+    max_supply: number;
+    circulating_supply: number;
+    last_updated: string;
+  };
+
+  error: string;
+}

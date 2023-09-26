@@ -14,29 +14,29 @@ export default function CryptoMarketData({ marketData }: Props) {
           Updated as of <DisplayTime epochTime={marketData.data.updated_at} />
         </p>
       </div>
-      <div className="section-content">
-        <div className="summary-group">
-          <div className="summary-item">
+      <div className="section-content d-flex">
+        <div className="summary-group d-flex">
+          <div className="summary-item d-flex">
             <p className="item-data">
               ₱ {marketData.data.total_market_cap.php.toLocaleString()}
             </p>
             <p className="item-label">Market Capitalization</p>
           </div>
-          <div className="summary-item">
+          <div className="summary-item d-flex">
             <p className="item-data">
               ₱ {marketData.data.total_volume.php.toLocaleString()}
             </p>
             <p className="item-label">24h Trading Volume</p>
           </div>
         </div>
-        <div className="summary-group">
-          <div className="summary-item">
+        <div className="summary-group d-flex">
+          <div className="summary-item d-flex">
             <p className="item-data">
               {marketData.data.active_cryptocurrencies.toLocaleString()}
             </p>
             <p className="item-label">Total Active Coins</p>
           </div>
-          <div className="summary-item">
+          <div className="summary-item d-flex">
             <p className="item-data">{marketData.data.markets}</p>
             <p className="item-label">Exchanges</p>
           </div>

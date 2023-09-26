@@ -44,14 +44,6 @@ export default function CyptoApp() {
 
   return (
     <>
-      <section id="search">
-        <form action="">
-          <div className="form-item">
-            <input type="text" />
-            <button>SEARCH</button>
-          </div>
-        </form>
-      </section>
       {isLoading && <Spinner />}
       {isError && <h1>Something went wrong</h1>}
       <section id="market-summary">

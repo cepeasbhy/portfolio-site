@@ -11,16 +11,16 @@ header {
 
 a {
   text-decoration: none;
+  color: #000;
 }
 
 #main-content,
 .header-wrapper {
   margin: auto;
-  width: 95%;
+  width: 90%;
 }
 
 .header-wrapper {
-  display: flex;
   align-items: center;
   gap: 20px;
 }
@@ -29,23 +29,23 @@ a {
   padding: 10px;
 }
 
-.header-title > h2 {
+.header-title > a > h2 {
+  font-size: 20px;
   color: #f4641d;
 }
 
+.header-title > a:hover {
+  text-decoration: none;
+}
+
 .header-subtitle > p,
-a {
+header a {
   font-size: 10px;
   color: #463f3f;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-.header-item:nth-child(2) {
-  display: flex;
-  gap: 10px;
 }
 
 .market-data {
@@ -91,13 +91,12 @@ section {
   margin-bottom: 15px;
 }
 
-#market-summary > .section-content {
-  display: flex;
+#market-summary > .section-content,
+.summary-group {
   gap: 20px;
 }
 
 .summary-item {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 5px;
@@ -109,9 +108,9 @@ section {
   flex-grow: 1;
 }
 
-.summary-group {
-  display: flex;
-  gap: 20px;
+.crypto-market-info > .d-flex,
+article {
+  gap: 10px;
 }
 
 .item-data {
@@ -160,7 +159,6 @@ tbody > tr:hover {
 }
 
 .crypto-identity {
-  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -171,9 +169,82 @@ tbody > tr:hover {
   font-size: 10px;
 }
 
+.crypto-description {
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+
+.crypto-description > a {
+  color: #f4641d;
+}
+
+.coin-name,
+.coin-price,
+.rank {
+  font-weight: bold;
+}
+
+.coin-name {
+  font-size: 20px;
+}
+
+.coin-price {
+  font-size: 30px;
+}
+
+.rank {
+  background-color: #f4641d;
+  border-radius: 2px;
+  padding: 3px;
+  color: #ffff;
+  font-size: 11px;
+}
+
+.block-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.market-info-item {
+  align-items: center;
+  border-bottom: 1px solid #8a8585;
+  gap: 10px;
+}
+
+.section-content > .market-info-item {
+  margin-bottom: 5px;
+  border: none;
+}
+
+#statistics {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #f4641d;
+  background-color: #f1f5f9;
+  flex-grow: 1;
+}
+
+.market-info-item > .item-label {
+  font-size: 15px;
+}
+
 @media only screen and (max-width: 1150px) {
   #market-summary > .section-content {
     flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 925px) {
+  article {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .crypto-market-info > .block:nth-child(2) {
+    flex-direction: column;
+    gap: 0;
   }
 }
 
