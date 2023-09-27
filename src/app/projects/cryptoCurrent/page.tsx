@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "CRYPTOCURRENT",
 };
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 async function getData() {
   let marketData: market | undefined;
