@@ -290,6 +290,11 @@ tbody > tr:hover {
     display: block;
     overflow-x: auto;
   }
+
+  .market-info-item > p,
+  .market-info-item > .item-label {
+    font-size: 13px;
+  }
 }
 
 @media only screen and (max-width: 550px) {

@@ -4,7 +4,7 @@ interface Props {
   params: { id: string };
 }
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 async function getData(id: string) {
   const response = await fetch(
