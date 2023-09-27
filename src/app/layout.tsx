@@ -7,6 +7,19 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "ASBHY CEPE",
   description: "Personal Portfolio Site",
+
+  icons: {
+    icon: [
+      {
+        url: "favicon/light-icon.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "favicon/dark-icon.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
