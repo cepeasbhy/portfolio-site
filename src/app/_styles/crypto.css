@@ -229,6 +229,16 @@ tbody > tr:hover {
   font-size: 15px;
 }
 
+.display-error {
+  padding: 10px;
+  background-color: #f9a0b2;
+  color: #d80032;
+  border: 1px solid #d80032;
+  width: 300px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 1150px) {
   #market-summary > .section-content {
     flex-direction: column;
