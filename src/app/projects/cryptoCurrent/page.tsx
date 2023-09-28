@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import CryptoTable from "@/app/_sections/crypto/cryptoTable";
 import CryptoMarketData from "@/app/_sections/crypto/cryptoMarketData";
 import { crypto, market } from "@/models/crypto";
-import { forEach } from "@splidejs/splide/src/js/utils";
 
 export const metadata: Metadata = {
   title: "CRYPTOCURRENT",
