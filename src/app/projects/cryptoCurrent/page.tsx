@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import CryptoTable from "@/app/_sections/crypto/cryptoTable";
 import CryptoMarketData from "@/app/_sections/crypto/cryptoMarketData";
 import { crypto, market } from "@/models/crypto";
+import { forEach } from "@splidejs/splide/src/js/utils";
 
 export const metadata: Metadata = {
   title: "CRYPTOCURRENT",
@@ -14,25 +15,28 @@ async function getData() {
   let cryptoList: crypto[] | undefined;
   let isError: boolean = false;
 
-  try {
-    const responseMarket = await fetch(
-      process.env.APP_URL + "/api/crypto/marketGlobal"
-    );
-    const responseCryptoList = await fetch(
-      process.env.APP_URL + "/api/crypto/list"
-    );
+  await Promise.allSettled([
+    //fecth global market data
+    fetch(process.env.APP_URL + "/api/crypto/marketGlobal").then((response) =>
+      response.json()
+    ),
 
-    if (responseCryptoList.ok && responseMarket.ok) {
-      marketData = await responseMarket.json();
-      cryptoList = await responseCryptoList.json();
-    } else {
+    //fetch list of cryptocurrencies
+    fetch(process.env.APP_URL + "/api/crypto/list").then((response) =>
+      response.json()
+    ),
+  ])
+    .then(async ([marketDataRaw, cryptoListRaw]) => {
+      marketDataRaw.status === "fulfilled" &&
+        (marketData = marketDataRaw.value);
+      cryptoListRaw.status === "fulfilled" &&
+        (cryptoList = cryptoListRaw.value);
+    })
+    .catch((err) => {
       isError = true;
-    }
-  } catch (error) {
-    isError = true;
-  } finally {
-    return { marketData, cryptoList, isError };
-  }
+    });
+
+  return { marketData, cryptoList, isError };
 }
 
 export default async function Page() {
@@ -40,29 +44,41 @@ export default async function Page() {
 
   return (
     <>
-      {isError && <h1>Something went wrong</h1>}
-      <section id="market-summary">
-        {marketData && !isError && (
-          <>
-            <CryptoMarketData marketData={marketData} />
-          </>
-        )}
-      </section>
-
-      <section id="crypto-list">
-        {cryptoList && !isError && (
-          <>
-            {Array.isArray(cryptoList) ? (
-              <CryptoTable cryptoList={cryptoList} />
-            ) : (
-              <h5>
-                Rate limit has already been exceeded. Please try again for a few
-                minutes
-              </h5>
+      {isError ? (
+        <h1>Something went wrong</h1>
+      ) : (
+        <>
+          {marketData === undefined && (
+            <h5 className="display-error">Failed to retrieve market data</h5>
+          )}
+          {cryptoList === undefined && (
+            <h5 className="display-error">
+              Failed to retrieve list of cryptocurrencies
+            </h5>
+          )}
+          <section id="market-summary">
+            {marketData && (
+              <>
+                <CryptoMarketData marketData={marketData} />
+              </>
             )}
-          </>
-        )}
-      </section>
+          </section>
+
+          <section id="crypto-list">
+            {cryptoList && (
+              <>
+                {Array.isArray(cryptoList) ? (
+                  <CryptoTable cryptoList={cryptoList} />
+                ) : (
+                  <h5 className="display-error">
+                    You have exceeded the rate limit
+                  </h5>
+                )}
+              </>
+            )}
+          </section>
+        </>
+      )}
     </>
   );
 }
