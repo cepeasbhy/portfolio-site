@@ -13,9 +13,8 @@ body {
 }
 
 .wrapper {
-  height: 100vh;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 #game-header {

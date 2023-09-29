@@ -7,7 +7,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "ASBHY CEPE",
   description: "Personal Portfolio Site",
-
   icons: {
     icon: [
       {
