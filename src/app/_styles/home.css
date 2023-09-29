@@ -315,6 +315,10 @@ nav {
   .cert-item > p {
     font-size: 0.65rem;
   }
+
+  #social {
+    justify-content: center;
+  }
 }
 
 @keyframes pulse {
