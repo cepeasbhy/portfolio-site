@@ -1,18 +1,21 @@
 main {
   width: 65%;
   margin: auto;
-  color: #ffff;
 }
 
 a {
   text-decoration: none;
-  color: #ffff;
 }
 
 article,
 nav {
   margin-left: auto;
   margin-right: auto;
+}
+
+#portfolio-content,
+a {
+  color: #ffff;
 }
 
 #profile {
@@ -98,7 +101,7 @@ nav {
 }
 #about-me,
 #tech {
-  width: 80%;
+  width: 65%;
 }
 
 #about-me {
@@ -109,8 +112,7 @@ nav {
 }
 
 #tech > .section-content,
-#certs,
-#projects {
+#certs {
   flex-wrap: wrap;
 }
 
@@ -136,6 +138,7 @@ nav {
 }
 
 #projects {
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
@@ -263,15 +266,13 @@ nav {
     font-size: 0.85rem;
     line-height: 1.5rem;
   }
-
-  #tech,
-  #about-me {
-    width: 100%;
-  }
 }
 
 @media only screen and (max-width: 750px) {
-  main {
+  main,
+  #about-me,
+  #tech,
+  #certs {
     width: 80%;
   }
 
