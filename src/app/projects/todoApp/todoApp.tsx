@@ -1,12 +1,22 @@
 "use client";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 export default function TodoApp() {
   const [taskList, setTaskList] = useState<string[]>([]);
 
+  useEffect(() => {
+    const storedTasks = localStorage.getItem("taskList");
+    if (storedTasks) {
+      setTaskList(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+  }, [taskList]);
+
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
     const formData = new FormData(e.target as HTMLFormElement);
     const taskItem = formData.get("task")!.toString().trim();
 

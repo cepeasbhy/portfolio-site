@@ -22,10 +22,10 @@ body {
 
 .task-item {
   display: flex;
+  justify-content: space-between;
   background-color: #d0bfef;
   border: 1px solid #793fdf;
   border-radius: 5px;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
   margin-top: 10px;
@@ -33,7 +33,7 @@ body {
   text-shadow: 2px 1px #793fdf;
 }
 
-input {
+input[type="text"] {
   border: 1px solid #793fdf;
 }
 
