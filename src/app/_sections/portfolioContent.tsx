@@ -7,9 +7,14 @@ import AboutMe from "../_components/abotmeInfo";
 import TechStackInfo from "../_components/techStackInfo";
 import ProjectsInfo from "../_components/projectInfo";
 import CertificatesInfo from "../_components/certificateInfo";
+import Navigation from "./Navigation";
 
 export default function PortfolioContent() {
   const [isActive, setIsActive] = useState("about");
+
+  function handleActiveState(isActive: string) {
+    setIsActive(isActive);
+  }
 
   useEffect(() => {
     AOS.init({
@@ -20,32 +25,7 @@ export default function PortfolioContent() {
 
   return (
     <>
-      <nav>
-        <div
-          className={"nav-item " + (isActive === "about" && "nav-active")}
-          onClick={() => setIsActive("about")}
-        >
-          ABOUT
-        </div>
-        <div
-          className={"nav-item " + (isActive === "tech" && "nav-active")}
-          onClick={() => setIsActive("tech")}
-        >
-          TECH
-        </div>
-        <div
-          className={"nav-item " + (isActive === "projects" && "nav-active")}
-          onClick={() => setIsActive("projects")}
-        >
-          PROJECTS
-        </div>
-        <div
-          className={"nav-item " + (isActive === "certs" && "nav-active")}
-          onClick={() => setIsActive("certs")}
-        >
-          CERTIFICATIONS
-        </div>
-      </nav>
+      <Navigation isActive={isActive} setIsActive={handleActiveState} />
 
       {isActive === "about" && <AboutMe />}
       {isActive === "tech" && <TechStackInfo />}
