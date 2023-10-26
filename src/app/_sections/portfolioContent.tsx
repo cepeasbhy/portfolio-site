@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import AboutMe from "../_components/abotmeInfo";
+import AboutMe from "../_components/aboutmeInfo";
 import TechStackInfo from "../_components/techStackInfo";
 import ProjectsInfo from "../_components/projectInfo";
 import CertificatesInfo from "../_components/certificateInfo";

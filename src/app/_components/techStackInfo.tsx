@@ -21,6 +21,19 @@ export default function TechStackInfo() {
           <img src={"/img/tech_icons/typescript.svg"} alt="" />
           <p>TYPESCRIPT</p>
         </div>
+
+        <div className="tech-item">
+          <img src={"/img/tech_icons/java.svg"} alt="" />
+          <p>JAVA</p>
+        </div>
+        <div className="tech-item">
+          <img src={"/img/tech_icons/csharp.svg"} alt="" />
+          <p>C#</p>
+        </div>
+        <div className="tech-item">
+          <img src={"/img/tech_icons/cplusplus.svg"} alt="" />
+          <p>C++</p>
+        </div>
         <div className="tech-item">
           <img src={"/img/tech_icons/php.svg"} alt="" />
           <p>PHP</p>
