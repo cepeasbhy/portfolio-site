@@ -10,7 +10,7 @@ export default function Home() {
             <img src="/img/asbhy_cepe.jpg" width={200} height={200} alt="" />
             <div className="tilt">
               <div id="status" className="pop">
-                I'm&nbsp;Currently&nbsp;Hired
+                I'm&nbsp;currently&nbsp;hired
               </div>
             </div>
           </section>
