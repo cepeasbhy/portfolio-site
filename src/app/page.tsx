@@ -8,13 +8,20 @@ export default function Home() {
         <article id="profile" className="d-flex">
           <section id="image-content">
             <img src="/img/asbhy_cepe.jpg" width={200} height={200} alt="" />
+            <div className="tilt">
+              <div id="status" className="pop">
+                I'm&nbsp;Currently&nbsp;Hired
+              </div>
+            </div>
           </section>
           <section id="profile-content">
             <div className="block">
               <p>WELCOME! MY NAME IS</p>
             </div>
             <div className="block">
-              <p>ASBHY CEPE</p>
+              <div>
+                <p>ASBHY CEPE</p>
+              </div>
             </div>
             <div className="block">
               <p>WEB DEV | BACKEND</p>
